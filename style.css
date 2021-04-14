@@ -1,13 +1,26 @@
-img {
-   max-width: 400px;
+#page {
+  background: #56494c;
+  color:#FEFEFE;
 }
-label, select {
-   display: block;
-   margin: 0 auto;
-   text-align: center;
+img {
+  max-width: 400px;
+}
+label,
+select {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
 label {
-margin-top: 12px;
+  margin-top: 12px;
+}
+select {
+   background-color:#D1D1D1;
+ }
+#partybutton {
+   background-color:#8DDBE0;
+   color:#00000a;
+   /* background-color:#F0803C; */
 }
 /* div {
    border: 1px solid black;
