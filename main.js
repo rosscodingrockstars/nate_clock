@@ -50,8 +50,18 @@ $("#mainphoto").attr("src", "images/nap_time.png");
 }
 
 });
+let boolean = true;
+
 $( "#partybutton" ).click(function() {
-    $(this).css('background-color','#F0803C');
-    $(this).text('PARTY OVER.');         
-    $("#mainphoto").attr("src", "https://images.unsplash.com/photo-1566927467984-6332be7377d0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80");
+    if (boolean === true) {
+        $("#mainphoto").attr("src", "https://images.unsplash.com/photo-1566927467984-6332be7377d0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80");
+        $(this).text('PARTY OVER'); 
+        $(this).css('background-color','#F0803C');
+    }
+    else if (boolean === false) {
+        $("#mainphoto").attr("src", "https://images.unsplash.com/photo-1548247416-ec66f4900b2e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=726&q=80");
+        $(this).text('PARTY TIME!'); 
+        $(this).css('background-color','#8DDBE0');
+    }
+    boolean = !boolean
   });
