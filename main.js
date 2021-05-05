@@ -65,3 +65,14 @@ $( "#partybutton" ).click(function() {
     }
     boolean = !boolean
   });
+  const time = new Date();
+  console.log()
+const hours = time.getHours();
+console.log()
+const minutes = time.getMinutes();
+console.log()
+const seconds = time.getSeconds();
+console.log(hours, minutes, seconds)
+const combinedTime = `${hours}:${minutes}:${seconds}`;
+console.log(combinedTime)
+$( "#clock" ).text(combinedTime);
