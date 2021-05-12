@@ -65,14 +65,18 @@ $( "#partybutton" ).click(function() {
     }
     boolean = !boolean
   });
-  const time = new Date();
-  console.log()
-const hours = time.getHours();
-console.log()
-const minutes = time.getMinutes();
-console.log()
-const seconds = time.getSeconds();
-console.log(hours, minutes, seconds)
-const combinedTime = `${hours}:${minutes}:${seconds}`;
-console.log(combinedTime)
-$( "#clock" ).text(combinedTime);
+ function showtime() {
+    const time = new Date();
+    let hours = time.getHours();
+    let minutes = time.getMinutes();
+    let seconds = time.getSeconds();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    seconds = seconds < 10 ? '0'+seconds : seconds;
+
+    const combinedTime = `${hours}:${minutes}:${seconds}:${ampm}`;
+    $( "#clock" ).text(combinedTime);
+ }
+setInterval(showtime, 1000);
